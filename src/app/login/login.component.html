@@ -1,0 +1,36 @@
+
+<Navbar
+  [rightContent]="rightContent"
+>
+  我的机构
+</Navbar>
+<ng-template #rightContent>
+  <Icon (click)="goBind()">
+    <svg class="icon" style="width:22px;height: 22px" viewBox="0 0 1024 1024" version="1.1">
+      <defs>
+        <style type="text/css"></style>
+      </defs>
+      <path d="M512 929a44 44 0 0 1-44-44V143a44 44 0 0 1 88 0v742a44 44 0 0 1-44 44z" fill="#FFF" p-id="2692"></path>
+      <path d="M883 558H141a44 44 0 0 1 0-88h742a44 44 0 0 1 0 88z" fill="#FFF" p-id="2693"></path>
+    </svg>
+  </Icon>
+</ng-template>
+
+<List [className]="'my-list'" *ngIf="sys_user_data.length !== 0">
+  <SwipeAction style="background-color: gray"
+               [autoClose]="true"
+               [right]="right"
+               (onOpen)="open(sys_user.org_id)"
+               (onClose)="close()"
+               *ngFor="let sys_user of sys_user_data"
+  >
+    <ListItem [extra]="sys_user.user_username"
+              (onClick)="login(sys_user.org_id)"
+              [disabled]="is_logging"
+    >
+      {{org_data[sys_user.org_id]}}
+    </ListItem>
+  </SwipeAction>
+</List>
+
+

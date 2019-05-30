@@ -1,0 +1,30 @@
+<div style="width: 100vw;height: 100vh;">
+
+  <Result [img]="img"
+          [title]="'操作成功'"
+          [message]="'测评师绑定微信成功'"
+  >
+    <ng-template #img>
+      <Icon>
+        <svg class="am-icon am-icon-check-circle am-icon-lg" style="color: rgb(31, 144, 230);height:60px; width: 60px" viewBox="0 0 48 48" version="1.1">
+          <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="#check-circle">
+            <path
+              d="M24 48c13.255 0 24-10.745 24-24S37.255 0 24 0 0 10.745 0 24s10.745 24 24 24zM13.1 23.2l-2.2 2.1 10 9.9L38.1 15l-2.2-2-15.2 17.8-7.6-7.6z"></path>
+          </use>
+        </svg>
+      </Icon>
+      <!--<Icon>
+        <svg class="am-icon am-icon-check-circle am-icon-md"  style="color: rgb(31, 144, 230);width:60px;height: 60px" ><use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="#check-circle"></use></svg>
+      </Icon>-->
+    </ng-template>
+  </Result>
+
+  <div style="font-size: 17px;text-align: center;margin: 25px;">{{countdown}}秒后跳转到登录页面</div>
+</div>
+
+
+
+
+
+
+

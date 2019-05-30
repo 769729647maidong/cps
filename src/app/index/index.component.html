@@ -1,0 +1,25 @@
+
+<Navbar
+  [icon]="icon"
+  [rightContent]="rightContent"
+  (onLeftClick)="goBack()"
+>
+  {{org_data['org_name']}}
+</Navbar>
+
+<ng-template #icon>
+  <Icon>
+    <svg class="am-icon am-icon-left am-icon-md" style="width: 30px;height: 30px;">
+      <use xmlns:xlink="https://www.w3.org/1999/xlink" xlink:href="#left"></use>
+    </svg>
+  </Icon>
+</ng-template>
+
+<ng-template #rightContent>
+  <Icon>
+    <svg class="icon" style="width: 22px;height: 22px;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="18842" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"></style></defs><path d="M648.6 538.9c63.2-46.6 104.2-121.6 104.2-206C752.8 191.8 638 77 496.9 77S241 191.8 241 332.9c0 84.4 41.1 159.4 104.2 206C200.4 598.7 98.3 741.4 98.3 907.5c0 22.1 17.9 40 40 40s40-17.9 40-40c0-175.8 143-318.7 318.7-318.7s318.7 143 318.7 318.7c0 22.1 17.9 40 40 40s40-17.9 40-40c-0.1-166.1-102.3-308.8-247.1-368.6z m-327.7-206c0-97.1 79-176 176-176s176 79 176 176-79 176-176 176-176-79-176-176z" p-id="18843" fill="#fff"></path></svg>
+  </Icon>
+</ng-template>
+
+
+<Grid [data]="grid_data" [columnNum]="3" (onClick)="click($event)"></Grid>

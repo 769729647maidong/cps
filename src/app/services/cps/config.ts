@@ -7,17 +7,16 @@ const domain = 'http://bms.21thedu.com/index.php';
 }*/
 
 export const Config = {
-  getOrgUrl: domain + '?m=admin&c=weixin&a=get_org',
-  getSysUserUrl: domain + '?m=admin&c=weixin&a=get_sys_user',
+  getOrgUrl: domain + '?m=admin&c=weixin&a=get_info&type=org',
+  getSysUserUrl: domain + '?m=admin&c=weixin&a=get_info&type=sysuser',
 
-  loginUrl: domain + '?m=admin&c=weixin&a=cps_login',
-
-  cpsBindUrl: domain + '?m=admin&c=weixin&a=cps_bind',
-  cpsUnBindUrl: domain + '?m=admin&c=weixin&a=cps_unbind',
+  loginUrl: domain + '?m=admin&c=weixin&a=cps&type=login',
+  cpsBindUrl: domain + '?m=admin&c=weixin&a=cps&type=bind',
+  cpsUnBindUrl: domain + '?m=admin&c=weixin&a=cps&type=unbind',
 
   indexUrl: domain + '?m=admin&c=weixin&a=index',
-  uploadInitUrl: domain + '?m=admin&c=weixin&a=upload_init',
   signatureUrl: domain + '?m=admin&c=weixin&a=signature',
+  uploadInitUrl: domain + '?m=admin&c=weixin&a=upload_init',
   uploadSearchUrl: domain + '?m=admin&c=weixin&a=upload_search',
   uploadSaveUrl: domain + '?m=admin&c=weixin&a=upload_save',
   uploadDeleteUrl: domain + '?m=admin&c=weixin&a=upload_delete',

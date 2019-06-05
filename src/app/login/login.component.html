@@ -21,7 +21,6 @@
                [autoClose]="true"
                [right]="right"
                (onOpen)="open(sys_user.org_id)"
-               (onClose)="close()"
                *ngFor="let sys_user of sys_user_data"
   >
     <ListItem [extra]="sys_user.user_username"

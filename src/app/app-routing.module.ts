@@ -17,7 +17,8 @@ const routes: Routes = [
   {path: 'bind/success', component: BindSuccessComponent},
   {path: 'index', component: IndexComponent},
   {path: 'index/upload', component: IndexUploadComponent, canActivate: [PermissionGuard]},
-  {path: '', redirectTo: '/login', pathMatch: 'full'}
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '**', component: LoginComponent}
 ];
 
 @NgModule({

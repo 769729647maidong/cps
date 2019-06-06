@@ -20,8 +20,8 @@ export class IndexComponent implements OnInit {
   user_data = {};
 
   grid_data = [
-    {text: '上传文件', icon: 'assets/img/logo.svg', navigation: 'index/upload'},
-    {text: '...', icon: 'assets/img/logo.svg'}
+    {text: '上传文件', icon: '/v/cps/0.0.1/assets/img/logo.svg', navigation: 'index/upload'},
+    {text: '...', icon: '/v/cps/0.0.1/assets/img/logo.svg'}
   ];
 
   constructor(

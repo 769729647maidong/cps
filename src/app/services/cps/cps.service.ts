@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpHeaders} from '@angular/common/http';
+
 import {HttpClientService} from '../http/http-client.service';
 
 import {Observable, of} from 'rxjs';
@@ -10,9 +10,6 @@ import {Config} from './config';
 import {MessageService} from '../message/message.service';
 import {Toast} from 'ng-zorro-antd-mobile';
 
-const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'})
-};
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +24,7 @@ export class CpsService {
   }
 
   getSysUser(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.getSysUserUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.getSysUserUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('获取系统用户'))
     );
@@ -35,62 +32,62 @@ export class CpsService {
 
   getOrg(): Observable<Cps> {
     return this.http.get<Cps>(Config.getOrgUrl).pipe(
-        tap((result: Cps) => this.log(`${result.msg}`)),
-        catchError(this.handleError<Cps>('获取机构'))
-      );
+      tap((result: Cps) => this.log(`${result.msg}`)),
+      catchError(this.handleError<Cps>('获取机构'))
+    );
   }
 
   cpsLogin(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.loginUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.loginUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('测评师登录'))
     );
   }
 
   cpsBind(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.cpsBindUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.cpsBindUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('测评师绑定'))
     );
   }
 
   cpsUnBind(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.cpsUnBindUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.cpsUnBindUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('测评师解绑'))
     );
   }
 
   cpsIndex(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.indexUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.indexUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('测评师首页'))
     );
   }
 
   uploadInit(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.uploadInitUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.uploadInitUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('上传页面初始化'))
     );
   }
 
   uploadSearch(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.uploadSearchUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.uploadSearchUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('查询文件'))
     );
   }
 
   uploadSave(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.uploadSaveUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.uploadSaveUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('保存文件'))
     );
   }
 
   uploadDelete(param: Object): Observable<Cps> {
-    return this.http.post<Cps>(Config.uploadDeleteUrl, param, httpOptions).pipe(
+    return this.http.post<Cps>(Config.uploadDeleteUrl, param).pipe(
       tap((result: Cps) => this.log(`${result.msg}`)),
       catchError(this.handleError<Cps>('删除文件'))
     );

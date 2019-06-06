@@ -15,13 +15,10 @@ import {BindComponent} from './bind/bind.component';
 import {BindSuccessComponent} from './bind/bind-success/bind-success.component';
 
 import {IndexComponent} from './index/index.component';
-import { IndexUploadComponent } from './index/index-upload/index-upload.component';
+import {IndexUploadComponent} from './index/index-upload/index-upload.component';
 
-import {CookieService} from 'ngx-cookie-service';
-import {PermissionGuard} from './services/cps/PermissionGuard';
-import {BaseInterceptor} from './http-interceptors/base-interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
-
+import {BaseInterceptor} from './http-interceptors/base-interceptor';
 
 @NgModule({
   declarations: [
@@ -41,8 +38,6 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     NgZorroAntdMobileModule
   ],
   providers: [
-    CookieService,
-    PermissionGuard,
     { provide: HTTP_INTERCEPTORS, useClass: BaseInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

@@ -1,19 +1,17 @@
-import {Component, OnInit, ElementRef, ChangeDetectorRef} from '@angular/core';
+import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 
 import {CpsService} from '../../services/cps/cps.service';
-import {CookieService} from 'ngx-cookie-service';
 
 import WechatJSSDK from 'wechat-jssdk/dist/client.umd';
 import {Toast} from 'ng-zorro-antd-mobile';
-import {PermissionGuard} from '../../services/cps/PermissionGuard';
 
 @Component({
   selector: 'app-index-upload',
   templateUrl: './index-upload.component.html',
   styleUrls: ['./index-upload.component.less'],
-  providers: [Toast, PermissionGuard]
+  providers: [Toast]
 })
 
 export class IndexUploadComponent implements OnInit {
@@ -49,12 +47,10 @@ export class IndexUploadComponent implements OnInit {
   };
 
   constructor(
+    private _toast: Toast,
     private router: Router,
-    private _element: ElementRef,
     private location: Location,
     private cpsService: CpsService,
-    private cookieService: CookieService,
-    private _toast: Toast,
     private cdr: ChangeDetectorRef
   ) {
   }
@@ -215,11 +211,6 @@ export class IndexUploadComponent implements OnInit {
       this.cpsService.uploadSave({task_id: this.task_id, upload_files: upload_files})
         .subscribe(result => {
           Toast.hide();
-          if (result === undefined) {
-            Toast.show('请求出错', 2000);
-            this.taskChange(this.task_id);
-            return;
-          }
           if (Number(result.code) > 0) {
             Toast.show(result.msg, 2000);
           } else {

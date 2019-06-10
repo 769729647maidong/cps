@@ -26,8 +26,9 @@
              [extra]="search"
              [(ngModel)]="task_id"
              [clear]="true"
-             [type]="'number'"
+             [type]="'digit'"
              (onChange)="taskChange($event)"
+             (keyup)="taskKeyUp($event)"
              (onExtraClick)="uploadSearch(task_id)"
   >
     <Icon (click)="scanBarCode()">

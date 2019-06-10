@@ -86,6 +86,15 @@ export class IndexUploadComponent implements OnInit {
       });
   }
 
+  /**
+   * 监听键盘输入(Enter)事件
+   * @param event 输入事件
+   */
+  taskKeyUp(event) {
+    if (event.code === 'Enter') {
+      this.uploadSearch(this.task_id);
+    }
+  }
 
   /**
    * 输入框任务号的值变化回调函数

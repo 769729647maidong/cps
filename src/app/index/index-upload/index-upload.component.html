@@ -23,13 +23,11 @@
 
 <div class="input-search">
   <InputItem [placeholder]="'任务号'"
-             [extra]="search"
              [(ngModel)]="task_id"
              [clear]="true"
              [type]="'digit'"
              (onChange)="taskChange($event)"
              (keyup)="taskKeyUp($event)"
-             (onExtraClick)="uploadSearch(task_id)"
   >
     <Icon (click)="scanBarCode()">
       <svg class="icon" style="width: 26px;height: 26px;margin-top: 4px;" viewBox="0 0 1199 1024" version="1.1"
@@ -57,11 +55,6 @@
     </Icon>
   </InputItem>
 
-  <ng-template #search>
-    <Icon>
-      <div Button style="" [type]="'primary'" [inline]="true" [size]="'small'">搜索</div>
-    </Icon>
-  </ng-template>
 </div>
 
 

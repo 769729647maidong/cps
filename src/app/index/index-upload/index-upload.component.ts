@@ -47,11 +47,11 @@ export class IndexUploadComponent implements OnInit {
   };
 
   constructor(
-    private _toast: Toast,
     private router: Router,
     private location: Location,
     private cpsService: CpsService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private _toast: Toast,
   ) {
   }
 

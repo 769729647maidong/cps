@@ -1,5 +1,5 @@
 
-const domain = 'http://bms.21thedu.com/index.php';
+const domain = '/index.php';
 
 export const Config = {
   getOrgUrl: domain + '?m=admin&c=weixin&a=get_info&type=org',

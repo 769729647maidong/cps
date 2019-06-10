@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private cpsService: CpsService,
+    private router: Router,
     private _toast: Toast,
-    private router: Router
   ) {
 
   }

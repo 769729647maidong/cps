@@ -30,10 +30,10 @@ export class BindComponent implements OnInit {
 
   constructor(
     private cpsService: CpsService,
-    private _toast: Toast,
     private _picker: Picker,
     private router: Router,
-    private location: Location
+    private location: Location,
+    private _toast: Toast,
   ) {
 
   }
